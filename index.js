@@ -3,7 +3,7 @@ const fs = require('fs');
 const generateHTML = require('./src/generateHTML');
 const engineer = require('./lib/engineer');
 const intern = require('./lib/intern');
-const manager = require('./lib/manager.js');
+const manager = require('./lib/manager');
 
 let teamInfo = {
   engineerInfo: [], 
@@ -69,7 +69,7 @@ function nextEmployee() {
         internQuestions();
       }
       if (answers.Team === "No") {
-        generateHTML();
+        createHTML();
       }
     });
 }
@@ -145,7 +145,7 @@ function engineerQuestions() {
       nextEmployee();
     });
 }
-function generateHTML() {
+function createHTML() {
   fs.writeFile("sample.html", generateHTML(teamInfo), (err) =>
     err ? console.log(err) : console.log(".")
   );

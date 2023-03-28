@@ -1,6 +1,6 @@
 const Manager = require ('../lib/manager');
 
-test('matches properties put in', () => {
+test('matches input values', () => {
     const manager = new Manager('Juan', 52, 'Juan@email.com', 8769998212)
 
     expect(manager.name).toEqual(expect.any(String));
